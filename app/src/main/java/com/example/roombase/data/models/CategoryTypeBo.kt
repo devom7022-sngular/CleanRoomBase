@@ -14,7 +14,7 @@ data class CategoryTypeBo(
         return CategoryTypeEntity(
             id = id,
             name = name,
-            description
+            description = description
         )
     }
 }
