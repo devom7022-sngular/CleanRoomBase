@@ -1,7 +1,6 @@
 package com.example.roombase.data.database.entities
 
 import androidx.room.Embedded
-import androidx.room.Entity
 import androidx.room.Relation
 import com.example.roombase.data.models.PromotionBo
 import com.example.roombase.data.models.PromotionWithItsTypeBo

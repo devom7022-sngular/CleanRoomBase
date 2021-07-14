@@ -1,7 +1,6 @@
 package com.example.roombase.data.database.entities
 
 import androidx.room.Embedded
-import androidx.room.Entity
 import androidx.room.Junction
 import androidx.room.Relation
 import com.example.roombase.data.models.ProductBo
@@ -21,11 +20,11 @@ class PromotionWithProductsEntity(
     override fun toBo(): PromotionWithProductsBo {
         return PromotionWithProductsBo(
             promotionBo = promotionEntity.toBo(),
-            productsBo = promotionsToBo(productsEntity)
+            productsBo = productsToBo(productsEntity)
         )
     }
 
-    private fun promotionsToBo(productsEntity: List<ProductEntity>): List<ProductBo> {
+    private fun productsToBo(productsEntity: List<ProductEntity>): List<ProductBo> {
 
         val list: MutableList<ProductBo> = mutableListOf()
 

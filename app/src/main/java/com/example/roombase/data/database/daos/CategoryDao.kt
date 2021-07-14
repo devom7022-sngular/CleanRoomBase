@@ -1,21 +1,43 @@
 package com.example.roombase.data.database.daos
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.roombase.data.database.entities.CategoryEntity
+import com.example.roombase.data.database.entities.CategoryWithItsTypeEntity
+import com.example.roombase.data.database.entities.ProductEntity
+import com.example.roombase.data.database.entities.ProductWithPromotionsEntity
 import io.reactivex.Observable
 
+/**
+ * CategoryDao
+ */
 @Dao
-interface CategoryDao {
+interface CategoryDao : BaseDao<ProductEntity>  {
 
+    /**
+     * Query method to get all shopping carts
+     */
+    @Query("SELECT * FROM category")
+    suspend fun getCategories(): List<CategoryEntity>
+
+    /**
+     * Query method to get shopping cart by id
+     *
+     * @param id shopiing cart id value
+     */
+    @Transaction
+    @Query("SELECT * FROM category WHERE categoryId = :categoryId")
+    suspend fun findCategoryById(categoryId: Long) : CategoryEntity
+
+    /**
+     * Query method to get CategoryType and category
+     * 1:N Relation
+     */
+    @Query("SELECT * from categoryType WHERE categoryTypeId == :categoryTypeId")
+    fun getCategoryWithItsType(categoryTypeId: String): List<CategoryWithItsTypeEntity>
+
+    /**
+     * Insert method to set categories
+     */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveAllCategories(categoriesEntity: List<CategoryEntity>)
-
-    @Query("SELECT * from category WHERE isVisibleInApp == 1 ORDER BY showOrder ASC")
-    fun getAllCategories(): Observable<List<CategoryEntity>>
-
-    @Query("SELECT * from category WHERE isVisibleInApp == 1 AND id == :id")
-    fun getCategoryById(id: String): CategoryEntity
+    fun saveCategories(categoriesEntity: List<CategoryEntity>)
 }
