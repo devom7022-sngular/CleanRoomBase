@@ -4,9 +4,8 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Relation
 import com.example.roombase.data.models.ProductAndCategoryBo
-import com.example.roombase.utils.TABLE_PRODUCT_AND_CATEGORY
 
-@Entity(tableName = TABLE_PRODUCT_AND_CATEGORY)
+//@Entity(tableName = TABLE_PRODUCT_AND_CATEGORY)
 class ProductAndCategoryEntity(
     @Embedded var productEntity: ProductEntity,
     @Relation(

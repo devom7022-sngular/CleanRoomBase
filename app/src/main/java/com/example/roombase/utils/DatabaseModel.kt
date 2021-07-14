@@ -14,11 +14,11 @@ const val TABLE_ORDER = "order"
 const val TABLE_STORE = "store"
 const val TABLE_PARTNER = "partner"
 const val TABLE_SESSION = "session"
-const val TABLE_CATEGORY_WITH_ITS_TYPE = "CategoryWithItsType"
+/*const val TABLE_CATEGORY_WITH_ITS_TYPE = "CategoryWithItsType"
 const val TABLE_PRODUCT_AND_CATEGORY = "ProductAndCategory"
 const val TABLE_PROMOTION_WITH_ITS_TYPE = "PromotionWithItsType"
 const val TABLE_PROMOTION_WITH_PRODUCTS = "PromotionWithProducts"
-const val TABLE_PRODUCT_WITH_PROMOTIONS = "ProductWithPromotions"
+const val TABLE_PRODUCT_WITH_PROMOTIONS = "ProductWithPromotions"*/
 
 
 

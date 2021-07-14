@@ -6,9 +6,8 @@ import androidx.room.Junction
 import androidx.room.Relation
 import com.example.roombase.data.models.ProductBo
 import com.example.roombase.data.models.PromotionWithProductsBo
-import com.example.roombase.utils.TABLE_PROMOTION_WITH_PRODUCTS
 
-@Entity(tableName = TABLE_PROMOTION_WITH_PRODUCTS)
+//@Entity(tableName = TABLE_PROMOTION_WITH_PRODUCTS)
 class PromotionWithProductsEntity(
     @Embedded val promotionEntity: PromotionEntity,
     @Relation(
