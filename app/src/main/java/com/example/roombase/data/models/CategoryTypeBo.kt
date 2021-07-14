@@ -6,13 +6,13 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CategoryTypeBo(
-    var id: Int,
+    var categoryTypeId: Long,
     var name: String,
     var description: String = ""
 ) : Parcelable, BaseBo<CategoryTypeEntity> {
     override fun toEntity(): CategoryTypeEntity {
         return CategoryTypeEntity(
-            id = id,
+            categoryTypeId = categoryTypeId,
             name = name,
             description = description
         )

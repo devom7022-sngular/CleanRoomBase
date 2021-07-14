@@ -8,13 +8,13 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = TABLE_CATEGORY_TYPE)
 class CategoryTypeEntity(
-    @SerializedName("id") @PrimaryKey(autoGenerate = true) var id: Int = 0,
+    @SerializedName("categoryTypeId") @PrimaryKey(autoGenerate = true) var categoryTypeId: Long = 0,
     @SerializedName("name") var name: String = "",
     @SerializedName("description") var description: String = ""
 ) : BaseEntity<CategoryTypeBo> {
     override fun toBo(): CategoryTypeBo {
         return CategoryTypeBo(
-            id = id,
+            categoryTypeId = categoryTypeId,
             name = name,
             description = description
         )
